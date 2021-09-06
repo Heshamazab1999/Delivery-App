@@ -3,6 +3,7 @@ import 'package:untitled2/components/login_button.dart';
 import 'package:untitled2/components/login_text_field.dart';
 import 'package:untitled2/components/social_login_button.dart';
 import 'package:untitled2/screens/signup_screen.dart';
+import 'package:sign_button/sign_button.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -39,8 +40,10 @@ class LoginScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   child: LoginButton(
                     function: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => SignUpScreen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SignUpScreen()));
                     },
                     label: "Login",
                   ),
@@ -55,13 +58,12 @@ class LoginScreen extends StatelessWidget {
                 ),
                 SocialLoginButton(
                   label: "Login with Facebook",
-                  icon: Icons.facebook,
                   color: Colors.blue[900],
                 ),
                 SocialLoginButton(
-                  label: " Login with Gmail",
-                  icon: Icons.whatshot,
-                  color: Colors.red[500],
+                  label: "Login with Google",
+                  color: Colors.red[900],
+                  buttonType: ButtonType.google,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 30),
@@ -74,7 +76,8 @@ class LoginScreen extends StatelessWidget {
                       ),
                       Text(
                         " Sign Up",
-                        style: TextStyle(fontSize: 18, color: Colors.deepOrange),
+                        style:
+                            TextStyle(fontSize: 18, color: Colors.deepOrange),
                       ),
                     ],
                   ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled2/components/login_button.dart';
 import 'package:untitled2/components/login_text_field.dart';
+import 'package:untitled2/screens/reset_password.dart';
 
 class SignUpScreen extends StatelessWidget {
   @override
@@ -52,7 +53,12 @@ class SignUpScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   child: LoginButton(
-                    function: () {},
+                    function: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ResetPassword()));
+                    },
                     label: "Sign Up",
                   ),
                 ),
@@ -67,7 +73,8 @@ class SignUpScreen extends StatelessWidget {
                       ),
                       Text(
                         "Login",
-                        style: TextStyle(fontSize: 18, color: Colors.deepOrange),
+                        style:
+                            TextStyle(fontSize: 18, color: Colors.deepOrange),
                       ),
                     ],
                   ),

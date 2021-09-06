@@ -1,27 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:sign_button/sign_button.dart';
 
 class SocialLoginButton extends StatelessWidget {
   final String label;
-  final IconData? icon;
   final Color? color;
+  final ButtonType buttonType;
 
-  SocialLoginButton({this.icon, this.label = '', this.color});
+  SocialLoginButton(
+      {this.label = '', this.color, this.buttonType = ButtonType.facebook});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
       child: SizedBox(
         height: 50,
-        width: 250,
+        width: 280,
         child: TextButton(
           onPressed: () {},
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(
-                icon,
-                color: Colors.white,
+              SignInButton.mini(
+                buttonType: buttonType,
+                onPressed: () {},
+                btnColor: Colors.transparent,
+                elevation: 0,
               ),
               Text(
                 label,
